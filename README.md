@@ -20,3 +20,9 @@
 * **Phase 5: Application Deployment**
   * Implement application modules.
   * Configure startup automation.
+
+### Tech Stack
+
+* **Backend / API:** Node.js (JavaScript / TypeScript)
+* **Frontend:** HTML, CSS, JavaScript
+* **Database:** SQLite
