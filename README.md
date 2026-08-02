@@ -21,7 +21,7 @@
   * Implement application modules.
   * Configure startup automation.
 
-### Tech Stack
+## Tech Stack
 
 * **Backend / API:** Node.js (JavaScript / TypeScript)
 * **Frontend:** HTML, CSS, JavaScript
