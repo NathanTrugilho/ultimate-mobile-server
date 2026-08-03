@@ -1,9 +1,9 @@
 ## Development Steps
 
 * **Phase 1: Hardware Setup & Remote Access**
-  * Reset device, free up space and disable battery optimizations.
-  * Install Termux.
-  * Configure SSH access.
+  * Reset device, free up space and disable battery optimizations. ✔
+  * Install Termux. ✔
+  * Configure SSH access. ✔
 
 * **Phase 2: Networking & Version Control**
   * Set up Git on the device and configure repository.
