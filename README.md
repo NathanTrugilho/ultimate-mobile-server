@@ -6,9 +6,9 @@
   * Configure SSH access. ✔
 
 * **Phase 2: Networking & Version Control**
-  * Set up Git on the device and configure repository.
-  * Configure Tailscale for remote access.
-  * Deploy a basic web server.
+  * Set up Git on the device and configure repository. ✔
+  * Configure Tailscale for remote access. ✔
+  * Deploy a basic web server. ✔
 
 * **Phase 3: Infrastructure & Environment**
   * Set up a database.
