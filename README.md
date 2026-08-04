@@ -13,6 +13,7 @@
 * **Phase 3: Infrastructure & Environment**
   * Set up a database.
   * Establish project directory structure and process management.
+  * Configure auto-start on boot/reboot for VPN, SSH server, and Web server.
 
 * **Phase 4: Security**
   * Evaluate security measures.
