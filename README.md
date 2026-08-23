@@ -16,7 +16,7 @@
   * Configure auto-start on boot/reboot for VPN and SSH server. ✔
 
 * **Phase 4: Security**
-  * Evaluate security measures.
+  * Evaluate security measures. ✔
 
 * **Phase 5: Application Deployment**
   * Implement application modules.
