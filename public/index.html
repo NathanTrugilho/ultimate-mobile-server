@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Teste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Hello World
+    <main class="container">
+        <h1>Financial Indicators</h1>
+        <button id="btnFetch">Fetch & Save Rates</button>
+        
+        <section id="results" class="cards"></section>
+
+        <h2>Recent History</h2>
+        <ul id="historyList"></ul>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>
