@@ -19,11 +19,19 @@
   * Evaluate security measures. ✔
 
 * **Phase 5: Application Deployment**
-  * Implement application modules.
-  * Configure startup automation.
+  * Implement application modules. ✔
+
+## Module Development
+
+The application is built using a modular architecture, following an iterative and incremental approach. Each new module is developed using a strict two-step cycle:
+
+1. **Feature Implementation:** Development of business logic (services), controllers, and database integration.
+2. **Security Assessment:** Immediate evaluation and mitigation of potential vulnerabilities before moving to the next feature.
 
 ## Tech Stack
 
 * **Backend / API:** Node.js (JavaScript / TypeScript)
 * **Frontend:** HTML, CSS, JavaScript
 * **Database:** SQLite
+
+## Implemented Modules
