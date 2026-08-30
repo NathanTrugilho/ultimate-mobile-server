@@ -1,26 +1,33 @@
-const btnFetch = document.getElementById('btnFetch');
-const resultsContainer = document.getElementById('results');
-const historyList = document.getElementById('historyList');
+const btnSystem = document.getElementById('btnSystem');
+const systemResults = document.getElementById('systemResults');
 
-btnFetch.addEventListener('click', async () => {
-    btnFetch.disabled = true;
-    btnFetch.innerText = 'Fetching...';
+btnSystem.addEventListener('click', async () => {
+    btnSystem.disabled = true;
+    btnSystem.innerText = 'Checking...';
+    
     try {
-        const response = await fetch('/api/finance/fetch', { method: 'POST' });
+        const response = await fetch('/api/system/info');
         const result = await response.json();
         
         if (result.data) {
-            const data = result.data;
-            resultsContainer.innerHTML = `
-            <div class="card"><strong>SELIC:</strong> ${data.selic}%</div>
-                <div class="card"><strong>Dollar:</strong> R$ ${data.dollar.toFixed(2)}</div>
-                <div class="card"><strong>Euro:</strong> R$ ${data.euro.toFixed(2)}</div>
+            const d = result.data;
+            
+            // Convert seconds to hours and minutes
+            const hours = Math.floor(d.uptime / 3600);
+            const minutes = Math.floor((d.uptime % 3600) / 60);
+            
+            // Notice there are only 3 cards now, maintaining the clean dashboard look
+            systemResults.innerHTML = `
+                <div class="card"><strong>Uptime:</strong> ${hours}h ${minutes}m</div>
+                <div class="card"><strong>Battery:</strong> ${d.battery}</div>
+                <div class="card"><strong>RAM (Used/Available):</strong> ${d.ramUsage}</div>
             `;
         }
     } catch (error) {
-        alert('Failed to update financial indicators.');
+        console.error('Failed to fetch status:', error);
+        alert('Failed to get system status.');
     } finally {
-        btnFetch.disabled = false;
-        btnFetch.innerText = 'Fetch & Save Rates';
+        btnSystem.disabled = false;
+        btnSystem.innerText = 'Check Status';
     }
 });
