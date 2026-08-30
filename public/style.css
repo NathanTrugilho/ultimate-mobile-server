@@ -4,31 +4,94 @@ body {
     background-color: #f4f4f9;
     color: #333;
 }
+
 .container {
-    max-width: 600px;
+    max-width: 1100px; /* Aumentado para acomodar a visualização em formato dashboard horizontal */
     margin: 0 auto;
 }
+
+h1 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Estrutura da Linha do Dashboard */
+.module-row {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Coluna da Esquerda (Botões e Títulos) */
+.module-sidebar {
+    flex: 0 0 220px; /* Largura fixa para manter os botões de todos os módulos alinhados */
+    border-right: 1px solid #eee;
+    padding-right: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.module-sidebar h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
 button {
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
     cursor: pointer;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
 }
+
+button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+/* Coluna da Direita (Resultados) */
+.module-content {
+    flex: 1; /* Ocupa o restante do espaço da linha */
+    min-width: 0; /* Evita quebra de layout em telas menores */
+}
+
+/* Exibição Horizontal dos Cartões */
 .cards {
-    margin-top: 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
 }
+
 .card {
-    background: #fff;
+    flex: 1; /* Força todos os 4 quadrados gerados pelo JS a terem o mesmo tamanho horizontalmente */
+    background: #fafafa;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
+    text-align: center;
 }
+
+.placeholder {
+    color: #888;
+    font-style: italic;
+}
+
 ul {
-    margin-top: 1rem;
+    margin: 0;
     padding-left: 1.2rem;
 }
+
 li {
     margin-bottom: 0.4rem;
+    font-size: 0.95rem;
 }

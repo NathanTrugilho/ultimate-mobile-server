@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Dashboard</title>
+    <title>Mobile Server Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="container">
-        <h1>Financial Indicators</h1>
-        <button id="btnFetch">Fetch & Save Rates</button>
+        <h1>Server Dashboard</h1>
         
-        <section id="results" class="cards"></section>
-
-        <h2>Recent History</h2>
-        <ul id="historyList"></ul>
+        <!-- Módulo de Finanças -->
+        <section class="module-row">
+            <div class="module-sidebar">
+                <h2>Finance</h2>
+                <button id="btnFetch">Fetch Rates</button>
+            </div>
+            
+            <div class="module-content">
+                <div id="results" class="cards">
+                    <span class="placeholder">Click "Fetch Rates" to load data.</span>
+                </div>
+            </div>
+        </section>
     </main>
+
     <script src="main.js"></script>
 </body>
 </html>
