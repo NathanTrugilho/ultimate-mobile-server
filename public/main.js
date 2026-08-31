@@ -1,6 +1,35 @@
 const btnSystem = document.getElementById('btnSystem');
 const systemResults = document.getElementById('systemResults');
 
+const btnFetch = document.getElementById('btnFetch');
+const results = document.getElementById('results');
+
+btnFetch.addEventListener('click', async () => {
+    btnFetch.disabled = true;
+    btnFetch.innerText = 'Fetching...';
+    
+    try {
+        const response = await fetch('/api/finance/fetch', { method: 'POST' });
+        const result = await response.json();
+        
+        if (result.data) {
+            const d = result.data;
+            
+            results.innerHTML = `
+                <div class="card"><strong>Dollar:</strong> R$ ${d.dollar.toFixed(2)}</div>
+                <div class="card"><strong>Euro:</strong> R$ ${d.euro.toFixed(2)}</div>
+                <div class="card"><strong>Selic:</strong> ${d.selic}%</div>
+            `;
+        }
+    } catch (error) {
+        console.error('Failed to fetch rates:', error);
+        alert('Failed to get financial rates.');
+    } finally {
+        btnFetch.disabled = false;
+        btnFetch.innerText = 'Fetch Rates';
+    }
+});
+
 btnSystem.addEventListener('click', async () => {
     btnSystem.disabled = true;
     btnSystem.innerText = 'Checking...';
